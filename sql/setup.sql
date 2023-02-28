@@ -1,0 +1,2 @@
+CREATE DATABASE User;
+CREATE DATABASE Application;
