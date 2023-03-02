@@ -8,6 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
 {
+    /**
+     * @return Response
+     */
     #[Route('/', name: 'app_index', methods: ['GET'])]
     public function index(): Response
     {
