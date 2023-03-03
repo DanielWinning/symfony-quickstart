@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <form method="POST">
+        {% if error %}
+            <div class="error">
+                {{ error.messageKey }}
+            </div>
+        {% endif %}
+        <input type="text" name="email" placeholder="Email address" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" value="Login" />
+    </form>
+{% endblock %}
