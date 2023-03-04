@@ -22,3 +22,9 @@ Copy `.env.example` to `.env` and update database credentials and admin email/pa
 composer install
 npm install && npm run build
 ```
+
+Run `sql/setup.sql`.
+
+```
+./bin/console doctrine:fixtures:load
+```

@@ -1,3 +1,5 @@
+CREATE DATABASE IF NOT EXISTS User;
+
 USE User;
 
 CREATE TABLE tblUser (
