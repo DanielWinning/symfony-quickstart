@@ -9,7 +9,7 @@ A Symfony setup with some basics taken care of, allowing for quicker development
 - Added ORM
 - Added Maker
 - Added Security
-- Added User Entity and setup SQL
+- Added User Entity + Repository and setup SQL (not using Doctrine migrations)
 - Added ORM fixtures and Foundry Factories
 - Added Tailwind
 
