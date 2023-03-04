@@ -9,3 +9,16 @@ A Symfony setup with some basics taken care of, allowing for quicker development
 - Added ORM
 - Added Maker
 - Added Security
+- Added User Entity and setup SQL
+- Added ORM fixtures and Foundry Factories
+- Added Tailwind
+
+## Instructions
+
+Copy `.env.example` to `.env` and update database credentials and admin email/password
+(for fixture migrations).
+
+```
+composer install
+npm install && npm run build
+```
