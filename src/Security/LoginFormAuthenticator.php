@@ -39,6 +39,11 @@ class LoginFormAuthenticator extends AbstractAuthenticator
         return $request->getPathInfo() === '/login' && $request->getMethod() === 'POST';
     }
 
+    /**
+     * @param Request $request
+     *
+     * @return Passport
+     */
     public function authenticate(Request $request): Passport
     {
         $email = $request->request->get('email');
@@ -58,26 +63,28 @@ class LoginFormAuthenticator extends AbstractAuthenticator
         );
     }
 
+    /**
+     * @param Request $request
+     * @param TokenInterface $token
+     * @param string $firewallName
+     *
+     * @return ?Response
+     */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         return new RedirectResponse($this->router->generate('app_index'));
     }
 
+    /**
+     * @param Request $request
+     * @param AuthenticationException $exception
+     *
+     * @return ?Response
+     */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception): ?Response
     {
         $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
 
         return new RedirectResponse($this->router->generate('security_login'));
     }
-
-//    public function start(Request $request, AuthenticationException $authException = null): Response
-//    {
-//        /*
-//         * If you would like this class to control what happens when an anonymous user accesses a
-//         * protected page (e.g. redirect to /login), uncomment this method and make this class
-//         * implement Symfony\Component\Security\Http\EntryPoint\AuthenticationEntryPointInterface.
-//         *
-//         * For more details, see https://symfony.com/doc/current/security/experimental_authenticators.html#configuring-the-authentication-entry-point
-//         */
-//    }
 }

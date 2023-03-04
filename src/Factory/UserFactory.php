@@ -15,6 +15,9 @@ final class UserFactory extends ModelFactory
         parent::__construct();
     }
 
+    /**
+     * @return array
+     */
     protected function getDefaults(): array
     {
         return [
@@ -24,13 +27,17 @@ final class UserFactory extends ModelFactory
         ];
     }
 
+    /**
+     * @return $this
+     */
     protected function initialize(): self
     {
-        return $this
-            // ->afterInstantiate(function(User $user): void {})
-        ;
+        return $this;
     }
 
+    /**
+     * @return string
+     */
     protected static function getClass(): string
     {
         return User::class;

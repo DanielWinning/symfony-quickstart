@@ -17,12 +17,17 @@ class AppFixtures extends Fixture
         $this->setPasswordHasher($passwordHasher);
     }
 
+    /**
+     * @param ObjectManager $manager
+     *
+     * @return void
+     */
     public function load(ObjectManager $manager): void
     {
         $manager->persist(
             $this->createAdminUser(
-                getenv('ADMIN_EMAIL'),
-                getenv('ADMIN_PASSWORD')
+                $_ENV['ADMIN_EMAIL'],
+                $_ENV['ADMIN_PASSWORD']
             )
         );
         UserFactory::createMany(10);
