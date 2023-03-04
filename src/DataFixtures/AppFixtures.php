@@ -27,7 +27,8 @@ class AppFixtures extends Fixture
         $manager->persist(
             $this->createAdminUser(
                 $_ENV['ADMIN_EMAIL'],
-                $_ENV['ADMIN_PASSWORD']
+                $_ENV['ADMIN_PASSWORD'],
+                true
             )
         );
         UserFactory::createMany(10);
@@ -41,12 +42,12 @@ class AppFixtures extends Fixture
      *
      * @return User
      */
-    private function createAdminUser(string $email, string $password): User
+    private function createAdminUser(string $email, string $password, bool $isDeveloper = false): User
     {
         $user = new User();
         $user->setEmail($email);
         $user->setPassword($this->getPasswordHasher()->hashPassword($user, $password));
-        $user->setRoles(['ROLE_ADMIN']);
+        $user->setRoles($isDeveloper ? ['ROLE_DEVELOPER'] : ['ROLE_ADMIN']);
 
         return $user;
     }
