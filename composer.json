@@ -1,4 +1,6 @@
 {
+    "name": "dannyxcii/symfony-quickstart",
+    "version": "0.1.0",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
