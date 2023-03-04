@@ -27,8 +27,8 @@ bin/console app:regenerate-app-secret
 npm install && npm run build
 ```
 
-Run `sql/setup.sql`.
+Check, update to your requirements and run `sql/setup.sql`.
 
 ```
-./bin/console doctrine:fixtures:load
+bin/console doctrine:fixtures:load
 ```
