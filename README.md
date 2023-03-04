@@ -18,8 +18,7 @@ A Symfony setup with some basics taken care of, allowing for quicker development
 composer create-project dannyxcii/symfony-quickstart my-project
 ```
 
-Copy `.env.example` to `.env` and update database credentials and admin email/password
-(for fixture migrations).
+Change database credentials and admin credentials (for fixtures) inside `.env`.
 
 ```
 composer install
