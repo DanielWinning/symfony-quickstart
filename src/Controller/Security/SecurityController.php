@@ -16,4 +16,10 @@ class SecurityController extends AbstractController
             'error' => $authenticationUtils->getLastAuthenticationError(),
         ]);
     }
+
+    #[Route('/register', name: 'security_register', methods: ['GET', 'POST'])]
+    public function registration(): Response
+    {
+        return $this->render('security/register.html.twig');
+    }
 }

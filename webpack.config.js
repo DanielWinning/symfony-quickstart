@@ -10,6 +10,7 @@ Encore
     .addEntry('app-js', './assets/js/app.js')
     .addEntry('app-styles', './assets/scss/app.scss')
     .addEntry('admin-styles', './assets/scss/admin.scss')
+    .addEntry('security-styles', './assets/scss/security.scss')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
