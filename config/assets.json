@@ -1,0 +1,20 @@
+{
+    "assets": [
+        {
+            "name": "app-js",
+            "path": "./assets/js/app.js"
+        },
+        {
+            "name": "app-styles",
+            "path": "./assets/scss/app.scss"
+        },
+        {
+            "name": "admin-styles",
+            "path": "./assets/scss/admin.scss"
+        },
+        {
+            "name": "security-styles",
+            "path": "./assets/scss/security.scss"
+        }
+    ]
+}

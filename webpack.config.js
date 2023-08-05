@@ -1,4 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
+const assetConfig = require('./config/assets.json');
 
 if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
@@ -7,10 +8,6 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 Encore
     .setOutputPath('public/assets/')
     .setPublicPath('/assets')
-    .addEntry('app-js', './assets/js/app.js')
-    .addEntry('app-styles', './assets/scss/app.scss')
-    .addEntry('admin-styles', './assets/scss/admin.scss')
-    .addEntry('security-styles', './assets/scss/security.scss')
     .splitEntryChunks()
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
@@ -24,5 +21,9 @@ Encore
     .enableSassLoader()
     .enablePostCssLoader()
     .enableTypeScriptLoader();
+
+assetConfig.assets.forEach(assetDefinition => {
+    Encore.addEntry(assetDefinition.name, assetDefinition.path);
+});
 
 module.exports = Encore.getWebpackConfig();
