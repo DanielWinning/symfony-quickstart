@@ -39,6 +39,7 @@ class AppFixtures extends Fixture
     /**
      * @param string $email
      * @param string $password
+     * @param bool $isDeveloper
      *
      * @return User
      */
@@ -47,7 +48,7 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setEmail($email);
         $user->setPassword($this->getPasswordHasher()->hashPassword($user, $password));
-        $user->setRoles($isDeveloper ? ['ROLE_DEVELOPER'] : ['ROLE_ADMIN']);
+        $user->setRoles($isDeveloper ? ['ROLE_DEVELOPER', 'ROLE_USER'] : ['ROLE_ADMIN', 'ROLE_USER']);
 
         return $user;
     }
