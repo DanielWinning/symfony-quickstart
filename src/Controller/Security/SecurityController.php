@@ -2,14 +2,12 @@
 
 namespace App\Controller\Security;
 
-use App\Entity\User;
 use App\Form\LoginForm;
 use App\Form\RegistrationForm;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Helpers\User\UserSaver;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
@@ -31,7 +29,7 @@ class SecurityController extends AbstractController
     }
 
     #[Route('/register', name: 'security_register', methods: ['GET', 'POST'])]
-    public function registration(Request $request, UserPasswordHasherInterface $passwordHasher, EntityManagerInterface $entityManager): Response
+    public function registration(Request $request, UserSaver $userSaver): Response
     {
         if ($this->getUser()) {
             return $this->redirect($this->generateUrl('app_index'));
@@ -41,15 +39,7 @@ class SecurityController extends AbstractController
         $registrationForm->handleRequest($request);
 
         if ($registrationForm->isSubmitted() && $registrationForm->isValid()) {
-            $data = $registrationForm->getData();
-            $user = new User();
-            $user->setEmail($data->getEmail());
-            $password = $passwordHasher->hashPassword($user, $data->getPassword());
-            $user->setPassword($password);
-            $user->setRoles(['ROLE_USER']);
-
-            $entityManager->persist($user);
-            $entityManager->flush();
+            $userSaver->save($registrationForm->getData());
 
             return $this->redirect($this->generateUrl('security_login'));
         }
