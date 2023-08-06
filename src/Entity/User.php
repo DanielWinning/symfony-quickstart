@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Table(name: 'tblUser', schema: 'User')]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
@@ -17,12 +18,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(name: 'strEmail', length: 180, unique: true)]
+    #[Assert\Unique]
     private ?string $email = null;
 
     #[ORM\Column(name: 'objRoles')]
     private array $roles = [];
 
     #[ORM\Column(name: 'strPassword')]
+    #[Assert\Length(
+        min: 8,
+        minMessage: 'Your password must contain a minimum of {{ limit }} characters.'
+    )]
     private ?string $password = null;
 
     private ?string $plainPassword = null;

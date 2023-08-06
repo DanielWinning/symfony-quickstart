@@ -2,16 +2,16 @@
 
 A Symfony setup with some basics taken care of, allowing for quicker development.
 
-- Added route annotation support inside `config/routes/attributes.yaml`
-- Included Twig and Profiler
-- Included Encore
-- Added SASS and Typescript support
-- Added ORM
-- Added Maker
-- Added Security
-- Added User Entity + Repository and setup SQL (not using Doctrine migrations)
-- Added ORM fixtures and Foundry Factories
-- Added Tailwind
+- Route annotation support
+- Twig and Profiler, Encore
+- SASS and Typescript support
+- Tailwind
+- ORM Bundle
+- Maker Bundle
+- Security
+- Forms
+- User Entity + Repository and setup SQL (not using Doctrine migrations)
+- ORM fixtures and Foundry Factories
 
 ## Instructions
 ```

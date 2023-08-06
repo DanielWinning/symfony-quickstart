@@ -3,5 +3,34 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
+    {{ form_start(registrationForm) }}
 
+        <div class="errors mb-8">
+            {% if not registrationForm.vars.valid %}
+                {% for child in registrationForm.children %}
+                    {% for error in child.vars.errors %}
+                        <span class="block text-red-500 text-sm font-semibold my-2">{{error.message}}</span>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div class="form-row">
+            {{ form_label(registrationForm.email) }}
+            {{ form_widget(registrationForm.email) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(registrationForm.password) }}
+            {{ form_widget(registrationForm.password) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(registrationForm.confirmPassword) }}
+            {{ form_widget(registrationForm.confirmPassword) }}
+        </div>
+
+        <div class="submit">
+            <input type="submit" value="Register" />
+        </div>
+
+    {{ form_end(registrationForm) }}
 {% endblock %}

@@ -3,14 +3,33 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <form method="POST">
+
+    {{ form_start(loginForm) }}
+
         {% if error %}
             <div class="error">
                 {{ error.messageKey }}
             </div>
         {% endif %}
-        <input type="text" name="email" placeholder="Email address" />
-        <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="Login" />
-    </form>
+
+        <div class="form-row">
+            {{ form_label(loginForm.email) }}
+            {{ form_widget(loginForm.email) }}
+        </div>
+        <div class="form-row">
+            {{ form_label(loginForm.password) }}
+            {{ form_widget(loginForm.password) }}
+        </div>
+
+        <div class="submit">
+            <input type="submit" value="Login" />
+        </div>
+
+    {{ form_end(loginForm) }}
+
+{#    <form method="POST">#}
+{#        <input type="text" name="email" placeholder="Email address" />#}
+{#        <input type="password" name="password" placeholder="Password" />#}
+{#        <input type="submit" value="Login" />#}
+{#    </form>#}
 {% endblock %}

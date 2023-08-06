@@ -1,1 +1,37 @@
 @import './partials/tailwind';
+
+.security {
+  @apply h-screen w-screen overflow-hidden flex items-center justify-center;
+
+  form {
+    @apply p-4 max-w-md rounded-md;
+
+    .form-row {
+      @apply my-4;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 1rem;
+
+      label {
+        @apply text-gray-600 text-right h-full flex items-center;
+      }
+    }
+    .submit {
+      @apply flex items-center justify-end;
+    }
+    input {
+      &[type='text'],
+      &[type='password'],
+      &[type='email'] {
+        @apply bg-gray-50 px-2 py-1 font-semibold;
+      }
+      &[type='submit'] {
+        @apply px-2 py-1 border border-indigo-900 bg-indigo-900 text-white text-lg font-semibold cursor-pointer;
+
+        &:hover {
+          @apply bg-white text-indigo-900;
+        }
+      }
+    }
+  }
+}
