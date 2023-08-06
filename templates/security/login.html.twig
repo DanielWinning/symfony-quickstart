@@ -7,7 +7,7 @@
     {{ form_start(loginForm) }}
 
         {% if error %}
-            <div class="error">
+            <div class="error block text-red-500 text-sm font-semibold mb-8 text-center">
                 {{ error.messageKey }}
             </div>
         {% endif %}

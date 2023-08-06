@@ -24,12 +24,16 @@
       &[type='password'],
       &[type='email'] {
         @apply bg-gray-50 px-2 py-1 font-semibold;
+
+        &:focus {
+          @apply outline-primary;
+        }
       }
       &[type='submit'] {
-        @apply px-2 py-1 border border-indigo-900 bg-indigo-900 text-white text-lg font-semibold cursor-pointer;
+        @apply px-2 py-1 border border-primary bg-primary text-white text-lg font-semibold cursor-pointer;
 
         &:hover {
-          @apply bg-white text-indigo-900;
+          @apply bg-white text-primary;
         }
       }
     }
