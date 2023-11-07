@@ -1,5 +1,8 @@
 # Quickstart Symfony Project
 
+<!-- Version Badge -->
+<img src="https://img.shields.io/badge/Version-0.2.2-blue" alt="Version 0.2.2">
+
 A Symfony setup with some basics taken care of, allowing for quicker development.
 
 - Route annotation support

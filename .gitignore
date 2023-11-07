@@ -1,5 +1,4 @@
 /.idea
-###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
 /.env.*.local
@@ -7,11 +6,9 @@
 /public/bundles/
 /var/
 /vendor/
-###< symfony/framework-bundle ###
-
-###> symfony/webpack-encore-bundle ###
+/coverage
 /node_modules/
 /public/assets/
-npm-debug.log
-yarn-error.log
-###< symfony/webpack-encore-bundle ###
+/npm-debug.log
+/yarn-error.log
+/.phpunit.result.cache
