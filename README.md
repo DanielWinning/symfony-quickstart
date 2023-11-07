@@ -1,11 +1,13 @@
 # Quickstart Symfony Project
 
+<div>
 <!-- Version Badge -->
-<img src="https://img.shields.io/badge/Version-0.2.2-blue" alt="Version 0.2.2">
+<img src="https://img.shields.io/badge/Version-0.2.2-blue" alt="Version 0.2.3">
 <!-- PHP Coverage Badge -->
 <img src="https://img.shields.io/badge/PHP Coverage-11.71%25-red" alt="PHP Coverage 11.71%">
+</div>
 
-A Symfony setup with some basics taken care of, allowing for quicker development.
+A heavily opinionated, custom Symfony setup with some basics taken care of, allowing for quicker development.
 
 - Route annotation support
 - Twig and Profiler, Encore
@@ -17,6 +19,7 @@ A Symfony setup with some basics taken care of, allowing for quicker development
 - Forms
 - User Entity + Repository and setup SQL (not using Doctrine migrations)
 - ORM fixtures and Foundry Factories
+- Unit Testing: PHPUnit
 
 ## Instructions
 ```
