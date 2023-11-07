@@ -2,6 +2,8 @@
 
 <!-- Version Badge -->
 <img src="https://img.shields.io/badge/Version-0.2.2-blue" alt="Version 0.2.2">
+<!-- PHP Coverage Badge -->
+<img src="https://img.shields.io/badge/PHP Coverage-11.71%25-red" alt="PHP Coverage 11.71%">
 
 A Symfony setup with some basics taken care of, allowing for quicker development.
 

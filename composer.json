@@ -65,7 +65,7 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
-        "test": "php -d xdebug.mode=coverage ./vendor/bin/phpunit --testdox --colors=always --coverage-html coverage --coverage-clover coverage/coverage.xml --testdox-html coverage/testdox.html && npx badger --version ./composer.json"
+        "test": "php -d xdebug.mode=coverage ./vendor/bin/phpunit --testdox --colors=always --coverage-html coverage --coverage-clover coverage/coverage.xml --testdox-html coverage/testdox.html && npx badger --version ./composer.json && npx badger --phpunit ./coverage/coverage.xml"
     },
     "conflict": {
         "symfony/symfony": "*"
